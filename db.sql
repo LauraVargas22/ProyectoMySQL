@@ -232,7 +232,7 @@ CREATE TABLE IF NOT EXISTS camper_history(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_camper INT,
     date_change DATE,
-    previous_state INT,
+    previous_state VARCHAR(50), 
     new_state VARCHAR(50),
     CONSTRAINT camper_history_id_FK FOREIGN KEY (id_camper) REFERENCES camper(id)
 );
