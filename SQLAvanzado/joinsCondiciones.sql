@@ -1,0 +1,11 @@
+-- 1. Listar los campers que han aprobado todos los módulos de su ruta (nota_final >= 60).
+-- 2. Mostrar las rutas que tienen más de 10 campers inscritos actualmente.
+-- 3. Consultar las áreas que superan el 80% de su capacidad con el número actual de campers
+-- asignados.
+-- 4. Obtener los trainers que imparten más de una ruta diferente.
+-- 5. Listar las evaluaciones donde la nota práctica es mayor que la nota teórica.
+-- 6. Mostrar campers que están en rutas cuyo SGDB principal es MySQL.
+-- 7. Obtener los nombres de los módulos donde los campers han tenido bajo rendimiento.
+-- 8. Consultar las rutas con más de 3 módulos asociados.
+-- 9. Listar las inscripciones realizadas en los últimos 30 días con sus respectivos campers y rutas.
+-- 10. Obtener los trainers que están asignados a rutas con campers en estado de “Alto Riesgo”.

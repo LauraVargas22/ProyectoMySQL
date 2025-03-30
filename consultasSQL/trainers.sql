@@ -1,0 +1,10 @@
+-- 1. Listar todos los entrenadores registrados.
+-- 2. Mostrar los trainers con sus horarios asignados.
+-- 3. Consultar los trainers asignados a más de una ruta.
+-- 4. Obtener el número de campers por trainer.
+-- 5. Mostrar las áreas en las que trabaja cada trainer.
+-- 6. Listar los trainers sin asignación de área o ruta.
+-- 7. Mostrar cuántos módulos están a cargo de cada trainer.
+-- 8. Obtener el trainer con mejor rendimiento promedio de campers.
+-- 9. Consultar los horarios ocupados por cada trainer.
+-- 10. Mostrar la disponibilidad semanal de cada trainer.

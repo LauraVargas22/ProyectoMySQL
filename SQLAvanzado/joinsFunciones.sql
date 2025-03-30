@@ -1,0 +1,10 @@
+-- 1. Obtener el promedio de nota final por módulo.
+-- 2. Calcular la cantidad total de campers por ruta.
+-- 3. Mostrar la cantidad de evaluaciones realizadas por cada trainer (según las rutas que imparte).
+-- 4. Consultar el promedio general de rendimiento por cada área de entrenamiento.
+-- 5. Obtener la cantidad de módulos asociados a cada ruta de entrenamiento.
+-- 6. Mostrar el promedio de nota final de los campers en estado “Cursando”.
+-- 7. Listar el número de campers evaluados en cada módulo.
+-- 8. Consultar el porcentaje de ocupación actual por cada área de entrenamiento.
+-- 9. Mostrar cuántos trainers tiene asignados cada área.
+-- 10. Listar las rutas que tienen más campers en riesgo alto.

@@ -1,0 +1,14 @@
+-- 1. Obtener los nombres completos de los campers junto con el nombre de la ruta a la que
+-- están inscritos.
+-- 2. Mostrar los campers con sus evaluaciones (nota teórica, práctica, quizzes y nota final) por
+-- cada módulo.
+-- 3. Listar todos los módulos que componen cada ruta de entrenamiento.
+-- 4. Consultar las rutas con sus trainers asignados y las áreas en las que imparten clases.
+-- 5. Mostrar los campers junto con el trainer responsable de su ruta actual.
+-- 6. Obtener el listado de evaluaciones realizadas con nombre de camper, módulo y ruta.
+-- 7. Listar los trainers y los horarios en que están asignados a las áreas de entrenamiento.
+-- 8. Consultar todos los campers junto con su estado actual y el nivel de riesgo.
+-- 9. Obtener todos los módulos de cada ruta junto con su porcentaje teórico, práctico y de
+-- quizzes.
+-- 10. Mostrar los nombres de las áreas junto con los nombres de los campers que están asistiendo
+-- en esos espacios.

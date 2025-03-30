@@ -1,0 +1,10 @@
+-- 1. Obtener todos los campers inscritos actualmente.
+-- 2. Listar los campers con estado "Aprobado".
+-- 3. Mostrar los campers que ya están cursando alguna ruta.
+-- 4. Consultar los campers graduados por cada ruta.
+-- 5. Obtener los campers que se encuentran en estado "Expulsado" o "Retirado".
+-- 6. Listar campers con nivel de riesgo “Alto”.
+-- 7. Mostrar el total de campers por cada nivel de riesgo.
+-- 8. Obtener campers con más de un número telefónico registrado.
+-- 9. Listar los campers y sus respectivos acudientes y teléfonos.
+-- 10. Mostrar campers que aún no han sido asignados a una ruta.

@@ -1,0 +1,10 @@
+-- 1. Obtener las notas teóricas, prácticas y quizzes de cada camper por módulo.
+-- 2. Calcular la nota final de cada camper por módulo.
+-- 3. Mostrar los campers que reprobaron algún módulo (nota < 60).
+-- 4. Listar los módulos con más campers en bajo rendimiento.
+-- 5. Obtener el promedio de notas finales por cada módulo.
+-- 6. Consultar el rendimiento general por ruta de entrenamiento.
+-- 7. Mostrar los trainers responsables de campers con bajo rendimiento.
+-- 8. Comparar el promedio de rendimiento por trainer.
+-- 9. Listar los mejores 5 campers por nota final en cada ruta.
+-- 10. Mostrar cuántos campers pasaron cada módulo por ruta.

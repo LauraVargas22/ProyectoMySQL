@@ -1,0 +1,20 @@
+-- 1. Obtener los campers con la nota más alta en cada módulo.
+-- 2. Mostrar el promedio general de notas por ruta y comparar con el promedio global.
+-- 3. Listar las áreas con más del 80% de ocupación.
+-- 4. Mostrar los trainers con menos del 70% de rendimiento promedio.
+-- 5. Consultar los campers cuyo promedio está por debajo del promedio general.
+-- 6. Obtener los módulos con la menor tasa de aprobación.
+-- 7. Listar los campers que han aprobado todos los módulos de su ruta.
+-- 8. Mostrar rutas con más de 10 campers en bajo rendimiento.
+-- 9. Calcular el promedio de rendimiento por SGDB principal.
+-- 10. Listar los módulos con al menos un 30% de campers reprobados.
+-- 11. Mostrar el módulo más cursado por campers con riesgo alto.
+-- 12. Consultar los trainers con más de 3 rutas asignadas.
+-- 13. Listar los horarios más ocupados por áreas.
+-- 14. Consultar las rutas con el mayor número de módulos.
+-- 15. Obtener los campers que han cambiado de estado más de una vez.
+-- 16. Mostrar las evaluaciones donde la nota teórica sea mayor a la práctica.
+-- 17. Listar los módulos donde la media de quizzes supera el 9.
+-- 18. Consultar la ruta con mayor tasa de graduación.
+-- 19. Mostrar los módulos cursados por campers de nivel de riesgo medio o alto.
+-- 20. Obtener la diferencia entre capacidad y ocupación en cada área.

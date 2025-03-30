@@ -1,0 +1,10 @@
+-- 1. Mostrar todas las rutas de entrenamiento disponibles.
+-- 2. Obtener las rutas con su SGDB principal y alternativo.
+-- 3. Listar los módulos asociados a cada ruta.
+-- 4. Consultar cuántos campers hay en cada ruta.
+-- 5. Mostrar las áreas de entrenamiento y su capacidad máxima.
+-- 6. Obtener las áreas que están ocupadas al 100%.
+-- 7. Verificar la ocupación actual de cada área.
+-- 8. Consultar los horarios disponibles por cada área.
+-- 9. Mostrar las áreas con más campers asignados.
+-- 10. Listar las rutas con sus respectivos trainers y áreas asignadas.

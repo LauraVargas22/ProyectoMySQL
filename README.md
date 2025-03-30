@@ -10,3 +10,18 @@ optimizada.
 1. [Modelado Base de Datos](./diagrams/modeloBaseDatos.md)
 2. [Creación Base de Datos](./db.sql)
 3. [Inserción de Datos](./insert.sql)
+Markup: 4. **Consultas SQL**
+            1. [Campers](./consultasSQL/campers.sql)
+            2. [Evaluaciones](./consultasSQL/evaluaciones.sql)
+            3. [Rutas y áreas de aprendizaje](./consultasSQL/rutasyareas.sql)
+            4. [Trainers](./consultasSQL/trainers.sql)
+            5. [Subconsultas y Cálculos Avanzados](./SQLAvanzado/subconsultas.sql)
+            6. [JOINs Básicos (INNER JOIN, LEFT JOIN, etc.)](./SQLAvanzado/joinBasico.sql)
+            7. [JOINs con condiciones específicas](./SQLAvanzado/joinsCondiciones.sql)
+            8. [JOINs con funciones de agregación](./SQLAvanzado/joinsFunciones.sql)
+            9. [Procedimientos Almacenados](./SQLAvanzado/procedimientos.sql)
+            10. [Funciones](./SQLAvanzado/funciones.sql)
+            11. [Triggers](./SQLAvanzado/triggers.sql)
+
+
+
