@@ -109,16 +109,6 @@ CREATE TABLE IF NOT EXISTS data_base(
     description VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS sgbd_route(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_learning_route INT,
-    id_main_database INT,
-    id_second_database INT,
-    CONSTRAINT learning_route_id_FK FOREIGN KEY (id_learning_route) REFERENCES learning_route(id),
-    CONSTRAINT main_database_id_FK FOREIGN KEY (id_main_database) REFERENCES data_base(id),
-    CONSTRAINT second_database_id_FK FOREIGN KEY (id_second_database) REFERENCES data_base(id)
-);
-
 CREATE TABLE IF NOT EXISTS state_skill(
     id INT PRIMARY KEY AUTO_INCREMENT,
     description VARCHAR(50) NOT NULL

@@ -7,4 +7,6 @@ asignaciones de entrenadores y áreas de entrenamiento, garantizando una soluci�
 optimizada.
 
 ## Tabla de Contenidos:
-1. [Creación Base de Datos](./db.sql)
+1. [Modelado Base de Datos](./diagrams/modeloBaseDatos.md)
+2. [Creación Base de Datos](./db.sql)
+3. [Inserción de Datos](./insert.sql)
