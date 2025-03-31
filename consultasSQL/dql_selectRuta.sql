@@ -41,6 +41,13 @@ GROUP BY a.id, a.name, a.capacity
 ORDER BY Currently_Occupied DESC;
 
 -- 8. Consultar los horarios disponibles por cada área.
+SELECT a.name, s.start_time AS Start_Time, s.end_time AS End_Time, s.time_slot AS Available_Time_Slot
+FROM area a
+JOIN schedule s ON 1=1
+LEFT JOIN schedule_trainer st ON a.id = st.area_id AND s.id = st.schedule_id
+WHERE st.area_id IS NULL
+ORDER BY s.time_slot;
+
 -- 9. Mostrar las áreas con más campers asignados.
 SELECT a.name AS AREA, COUNT(gd.id_camper) AS total_campers
 FROM group_details gd

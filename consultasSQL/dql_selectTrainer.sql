@@ -59,4 +59,9 @@ JOIN schedule_trainer st ON t.id = st.trainer_id
 JOIN schedule s ON st.schedule_id = s.id
 ORDER BY t.name, t.surname ASC;
 -- 10. Mostrar la disponibilidad semanal de cada trainer.
-
+SELECT t.id AS Trainer_ID, t.name AS Trainer_Name, t.surname AS Trainer_Surname, s.start_time AS Start_Time, s.end_time AS End_Time, s.time_slot AS Available_Time_Slot
+FROM trainers t
+JOIN schedule s ON 1=1
+LEFT JOIN schedule_trainer st ON t.id = st.trainer_id AND s.id = st.schedule_id
+WHERE st.trainer_id IS NULL
+ORDER BY t.name, s.time_slot;

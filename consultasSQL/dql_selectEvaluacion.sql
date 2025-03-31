@@ -7,6 +7,26 @@ JOIN skill s ON sp.id_skill = s.id
 JOIN grades g ON rs.id = g.id_register_skill
 GROUP BY c.name, c.surname, g.grade, s.name;
 -- 2. Calcular la nota final de cada camper por módulo.
+SELECT 
+    c.name AS Camper_Name, 
+    c.surname AS Camper_Surname, 
+    g.grade AS Theorical_Grade, 
+    g2.grade AS Practical_Grade, 
+    g3.grade AS Quiz_Grade, 
+    s.name AS Skill,
+    (g.grade * 0.3 + g2.grade * 0.6 + g3.grade * 0.1) AS Final_Grade
+FROM register_skill rs
+JOIN camper c ON rs.id_camper = c.id
+JOIN skill_planned sp ON rs.id_skill_planned = sp.id
+JOIN skill s ON sp.id_skill = s.id
+JOIN assesment a1 ON sp.id = a1.id_skill_planned AND a1.id_assesment_type = 1  -- Teórica
+JOIN assesment a2 ON sp.id = a2.id_skill_planned AND a2.id_assesment_type = 2  -- Práctica
+JOIN assesment a3 ON sp.id = a3.id_skill_planned AND a3.id_assesment_type = 3  -- Quizzes
+JOIN grades g ON rs.id = g.id_register_skill AND g.id_assesment = a1.id
+JOIN grades g2 ON rs.id = g2.id_register_skill AND g2.id_assesment = a2.id
+JOIN grades g3 ON rs.id = g3.id_register_skill AND g3.id_assesment = a3.id
+GROUP BY c.name, c.surname, g.grade, g2.grade, g3.grade, s.name
+ORDER BY Final_Grade DESC;
 
 -- 3. Mostrar los campers que reprobaron algún módulo (nota < 60).
 SELECT c.name AS Camper_Name, c.surname AS Camper_Surname, fg.final_grade, s.name
