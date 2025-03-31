@@ -27,7 +27,6 @@ GROUP BY s.name
 ORDER BY Campers_Low_Performance DESC;
 
 -- 5. Obtener el promedio de notas finales por cada módulo.
--- 5. Obtener el promedio de notas finales por cada módulo.
 SELECT s.name AS Skill, AVG(fg.final_grade) AS Average_Final_Grade
 FROM skill_planned sp 
 JOIN skill s ON sp.id_skill = s.id

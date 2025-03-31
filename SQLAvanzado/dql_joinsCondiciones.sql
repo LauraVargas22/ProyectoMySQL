@@ -1,5 +1,11 @@
 -- 1. Listar los campers que han aprobado todos los módulos de su ruta (nota_final >= 60).
+
 -- 2. Mostrar las rutas que tienen más de 10 campers inscritos actualmente.
+SELECT lr.description AS Learning_Route, COUNT(c.id_learning_route) AS Campers_Route
+FROM learning_route lr
+JOIN camper c ON lr.id = c.id_learning_route
+GROUP BY lr.description
+HAVING COUNT(c.id_learning_route) > 10;
 -- 3. Consultar las áreas que superan el 80% de su capacidad con el número actual de campers
 -- asignados.
 -- 4. Obtener los trainers que imparten más de una ruta diferente.
