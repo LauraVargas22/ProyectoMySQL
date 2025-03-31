@@ -35,7 +35,13 @@ SELECT rl.type_level AS Risk_Level, COUNT(c.id) AS Campers_Count
 FROM camper c
 JOIN risk_level rl ON c.id_risk_level = rl.id
 GROUP BY rl.type_level;
+
 -- 8. Obtener campers con más de un número telefónico registrado.
+SELECT c.id, c.name, c.surname, COUNT(t.phone_number) AS Phone_Number
+FROM camper c
+JOIN telephone t ON c.id = t.id_camper
+GROUP BY c.id, c.name, c.surname
+HAVING COUNT(t.phone_number) > 1;
 
 -- 9. Listar los campers y sus respectivos acudientes y teléfonos.
 SELECT c.name AS Name_Camper, c.surname AS Surname_Camper, t.name AS Name_Tutor, t.surname AS Surname_Tutor, t.phone_number AS Tutor_Telephone
