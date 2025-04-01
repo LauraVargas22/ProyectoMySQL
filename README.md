@@ -25,7 +25,7 @@ optimizada.
 
 ## Modelo Base de Datos
 Teniendo en cuenta, la problemática planteada se desarrolló el siguiente modelo ER para la creación de la base de datos.
-![alt text](ERModel.jpg)
+![alt text](./Diagrama.png)
 
 La base de datos se compone de algunas entidades tales como:
 - **Company**: Hace referencia a la empresa o institución educativa en este caso Campuslands.

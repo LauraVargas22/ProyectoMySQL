@@ -89,14 +89,55 @@ CALL learning_route_camper(98, 1);
 
 -- 4. Registrar una evaluación completa (teórica, práctica y quizzes) para un camper.
 DELIMITER $$
-CREATE PROCEDURE 
+CREATE PROCEDURE assesment_camper(
+    IN camper_id INT,
+    IN id_skill_planned INT,
+    IN date_assesment_theorical DATE,
+    IN date_assesment_practical DATE,
+    IN date_assesment_quizzes DATE,
+    IN description_theorical VARCHAR(50),
+    IN description_practical VARCHAR(50),
+    IN description_quizzes VARCHAR(50)
+)
 BEGIN
+    DECLARE message VARCHAR(50);
+    DECLARE id_state INT;
+    DECLARE id_assesment_theorical INT;
+    DECLARE id_assesment_practical INT;
+    DECLARE id_assesment_quizzes INT;
+
+    SET id_state = 11;
+    SET id_assesment_theorical = 1;    
+    SET id_assesment_practical = 2; 
+    SET id_assesment_quizzes = 3; 
+
+    INSERT INTO assesment(id_assesment_type, id_skill_planned, date_assesment, description, id_state_assesment)
+    VALUES (id_assesment_theorical, id_skill_planned, date_assesment_theorical, description_theorical, id_state);
+
+    INSERT INTO assesment(id_assesment_type, id_skill_planned, date_assesment, description, id_state_assesment)
+    VALUES (id_assesment_practical, id_skill_planned, date_assesment_practical, description_practical, id_state);
+
+    INSERT INTO assesment(id_assesment_type, id_skill_planned, date_assesment, description, id_state_assesment)
+    VALUES (id_assesment_quizzes, id_skill_planned, date_assesment_quizzes, description_quizzes, id_state);
+
+    IF ROW_COUNT() > 0 THEN
+        SET message = 'Evaluaciones registradas exitosamente';
+    ELSE
+        SET message = 'Error en el registro de las evaluaciones.';
+    END IF;
+    SELECT message AS 'Mensaje';
 END $$
 DELIMITER ;
+
+CALL assesment_camper(1, 1, '2025-04-30', '2025-03-31', '2025-05-10', 'Conceptos Arrays Java', 'Proyecto Java', 'Quizz Arrays Java');
+
 -- 5. Calcular y registrar automáticamente la nota final de un módulo.
 DELIMITER $$
-CREATE PROCEDURE 
+CREATE PROCEDURE final_grade_skill(
+    IN id_skill INT
+)
 BEGIN
+    
 END $$
 DELIMITER ;
 -- 6. Asignar campers aprobados a una ruta de acuerdo con la disponibilidad del área.

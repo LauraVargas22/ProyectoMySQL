@@ -183,7 +183,7 @@ INSERT INTO skill_planned(id_skill, start_date, end_date, id_state_skill, id_rou
 INSERT INTO session(id_skill_planned, date_session, topic) VALUES ('1','2025-01-10','Introducción a Java'),('1','2025-01-17','Sintaxis básica de Java'),('1','2025-01-24','Programación orientada a objetos en Java'),('1','2025-01-31','Manejo de excepciones en Java'),('1','2025-02-07','Java Collections Framework'),('1','2025-02-14','Java Streams API'),('1','2025-02-21','Java Concurrency'),('1','2025-02-28','Java I/O y NIO'),('1','2025-03-07','Java Networking'),('1','2025-03-14','Java JDBC y bases de datos'),('2','2025-02-02','Introducción a C#'),('2','2025-02-09','Sintaxis básica de C#'),('2','2025-02-16','Programación orientada a objetos en C#'),('2','2025-02-23','LINQ y Entity Framework'),('2','2025-03-02','ASP.NET Core MVC'),('2','2025-03-09','ASP.NET Core Web API'),('2','2025-03-16','C# Asynchronous Programming'),('2','2025-03-23','C# Collections y LINQ'),('2','2025-03-30','C# Unit Testing y TDD'),('3','2025-04-05','Introducción a Python'),('3','2025-04-12','Sintaxis y estructuras de datos en Python'),('3','2025-04-19','Programación orientada a objetos en Python'),('3','2025-04-26','Manejo de excepciones en Python'),('3','2025-05-03','Módulos y paquetes en Python'),('3','2025-05-10','Programación funcional en Python'),('3','2025-05-17','Python y bases de datos'),('3','2025-05-24','Automatización con Python'),('3','2025-05-31','Análisis de datos con Python'),('3','2025-06-07','Machine Learning con Python'),('4','2025-06-14','Introducción a JavaScript'),('4','2025-06-21','Sintaxis y estructuras de control en JavaScript'),('4','2025-06-28','Funciones y eventos en JavaScript'),('4','2025-07-05','Manipulación del DOM'),('4','2025-07-12','Asincronismo en JavaScript'),('4','2025-07-19','JavaScript y APIs REST'),('4','2025-07-26','Frameworks de JavaScript'),('4','2025-08-02','Pruebas en JavaScript'),('4','2025-08-09','Desarrollo con Node.js'),('4','2025-08-16','Seguridad en JavaScript'),('5','2025-08-23','Introducción a PHP'),('5','2025-08-30','Sintaxis y estructuras de datos en PHP'),('5','2025-09-06','Programación orientada a objetos en PHP'),('5','2025-09-13','Manejo de sesiones y cookies en PHP'),('5','2025-09-20','PHP y bases de datos'),('5','2025-09-27','Seguridad en PHP'),('5','2025-10-04','Frameworks de PHP'),('5','2025-10-11','Pruebas en PHP'),('5','2025-10-18','Desarrollo de API REST con PHP'),('5','2025-10-25','Optimización y rendimiento en PHP');
 
 INSERT INTO state_assesment(description) VALUES
-('Pendiente'),('Aprobado'),('Rechazado'),('En Progreso'),('Finalizado'),('Cancelado'),('Suspendido'),('En Espera'),('Evaluado'),('No Evaluado');
+('Pendiente'),('Aprobado'),('Rechazado'),('En Progreso'),('Finalizado'),('Cancelado'),('Suspendido'),('En Espera'),('Evaluado'),('No Evaluado'), ('Asignada');
 
 INSERT INTO assesment_type(type_name, estimation) VALUES 
 ('Evaluación Teórica', 60),('Práctica', 30),('Trabajos y Quizzes', 10),('Examen Final', 25),('Presentación Oral', 15),('Proyecto Final', 50),('Autoevaluación', 5),('Evaluación por Pares', 10),('Simulación de Entrevista', 20),('Hackathon', 40),('Evaluación de Código', 35),('Desafío Técnico', 30),('Resolución de Problemas', 25),('Prueba de Concepto', 20),('Evaluación Continua', 15),('Revisión de Código', 10),('Caso de Estudio', 30),('Prueba Diagnóstica', 10),('Evaluación Grupal', 20),('Informe Escrito', 15),('Retroalimentación del Instructor', 5),('Test de Competencias', 25),('Desarrollo de Software', 50),('Diseño de Base de Datos', 40),('Análisis de Algoritmos', 30),('Simulación de Proyecto', 45),('Investigación Aplicada', 35),('Validación de Conocimientos', 20),('Examen Abierto', 30),('Experiencia en Laboratorio', 40),('Desarrollo de Caso Práctico', 50),('Demostración de Habilidades', 30),('Desafío de Seguridad', 35),('Evaluación en Tiempo Real', 25),('Prueba de Rendimiento', 20),('Estudio Comparativo', 10),('Evaluación de Producto', 45),('Revisión de Presentaciones', 15),('Diseño de Prototipo', 40),('Implementación de Algoritmos', 50),('Modelado de Datos', 35),('Desarrollo de Microservicios', 50),('Evaluación UX/UI', 30),('Planificación de Proyecto', 25),('Desarrollo en Equipo', 40),('Práctica de Infraestructura', 35),('Creación de Documentación', 20),('Aplicación de Buenas Prácticas', 30),('Estrategia de Testing', 25);
@@ -432,9 +432,19 @@ INSERT INTO final_grade(id_register_skill, final_grade) VALUES
 (41, 69), (42, 71), (43, 53), (44, 65), (45, 57), (46, 58), (47, 61), (48, 64), (49, 54), (50, 52);
 
 INSERT INTO grades(id_register_skill, id_assesment, grade) VALUES
-(1, 3, 85), (2, 7, 73), (3, 10, 90), (4, 5, 67), (5, 12, 88), (6, 1, 92), (6, 2, 100), (7, 8, 76), (8, 4, 81), (9, 9, 95), (10, 2, 60),
-(11, 6, 87), (12, 11, 74), (13, 3, 98), (14, 7, 55), (15, 10, 89), (16, 5, 79), (17, 11, 93), (17, 10, 75), (18, 1, 68), (19, 8, 77), (20, 4, 84),
-(21, 9, 91), (22, 2, 62), (23, 6, 100), (24, 11, 70), (25, 3, 80), (26, 7, 75), (27, 10, 97), (28, 5, 56), (29, 12, 82), (30, 1, 99),
+(1, 3, 85), (1, 2, 65), (1,1, 90),
+(2, 7, 73), (2, 8, 90), (2, 9, 55),
+(3, 10, 90), (3, 11, 45), (3, 12, 46),
+(4, 5, 67), (4, 4, 78), (4, 6, 87),
+(5, 12, 88), (5, 10, 67), (5, 11, 77), 
+(6, 3, 45), (6, 1, 92), (6, 2, 100),
+(7, 8, 76), (7, 7, 45), (7, 9,50),
+(8, 4, 81), (8, 5, 78), (8, 6, 66),
+(9, 7, 65), (9, 8, 91), (9, 9, 95),
+(10, 2, 60), (10, 1, 65), (10, 3, 90),
+(11, 6, 87), (11, 4, 61), (11, 5, 68),
+(12, 11, 74), (12, 10, 45), (12, 12, 66),
+(13, 3, 98), (14, 7, 55), (15, 10, 89), (16, 5, 79), (17, 11, 93), (17, 10, 75), (18, 1, 68), (19, 8, 77), (20, 4, 84),(21, 9, 91), (22, 2, 62), (23, 6, 100), (24, 11, 70), (25, 3, 80), (26, 7, 75), (27, 10, 97), (28, 5, 56), (29, 12, 82), (30, 1, 99),
 (31, 8, 66), (32, 4, 72), (33, 9, 94), (34, 2, 59), (35, 6, 83), (36, 11, 86), (37, 3, 78), (38, 7, 63), (39, 10, 96), (40, 5, 50),
 (41, 12, 67), (42, 1, 71), (43, 8, 53), (44, 4, 65), (45, 9, 57), (46, 2, 58), (47, 6, 61), (48, 11, 64), (49, 3, 54), (50, 7, 52);
 
