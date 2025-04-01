@@ -1,6 +1,32 @@
 -- 1. Obtener los campers con la nota más alta en cada módulo.
+SELECT c.name AS Camper_Name, c.surname AS Camper_Surname, fg.final_grade, s.name AS Skill
+FROM camper c
+JOIN learning_route lr ON c.id_learning_route = lr.id
+JOIN skill_planned sp ON lr.id = sp.id_route
+JOIN skill s ON sp.id_skill = s.id
+JOIN register_skill rs ON sp.id = rs.id_skill_planned
+JOIN final_grade fg ON rs.id = fg.id_register_skill
+WHERE (s.id, fg.final_grade) IN (
+    SELECT s.id, MAX(fg.final_grade)
+    FROM camper c
+    JOIN learning_route lr ON c.id_learning_route = lr.id
+    JOIN skill_planned sp ON lr.id = sp.id_route
+    JOIN skill s ON sp.id_skill = s.id
+    JOIN register_skill rs ON sp.id = rs.id_skill_planned
+    JOIN final_grade fg ON rs.id = fg.id_register_skill
+    GROUP BY s.id
+);
 -- 2. Mostrar el promedio general de notas por ruta y comparar con el promedio global.
 -- 3. Listar las áreas con más del 80% de ocupación.
+SELECT a.name AS Area, COUNT(c.id) AS Current_Campers, a.capacity AS Area_Capacity, (COUNT(DISTINCT gd.id_camper) / a.capacity) * 100 AS Occupancy_Percentage, gc.name AS Group_Campus
+FROM area a
+JOIN schedule_trainer st ON a.id = st.area_id
+JOIN trainers t ON st.trainer_id = t.id 
+JOIN group_campus gc ON t.id = gc.trainer_id
+JOIN group_details gd ON gc.id = gd.id_group
+JOIN camper c ON gd.id_camper = c.id
+GROUP BY a.name, a.capacity, gc.name
+HAVING (COUNT(c.id) / a.capacity) * 100 > 80;
 -- 4. Mostrar los trainers con menos del 70% de rendimiento promedio.
 -- 5. Consultar los campers cuyo promedio está por debajo del promedio general.
 -- 6. Obtener los módulos con la menor tasa de aprobación.

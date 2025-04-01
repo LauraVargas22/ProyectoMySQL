@@ -3,33 +3,33 @@ USE sgdbCampus;
 
 CREATE TABLE IF NOT EXISTS country (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL
+    name VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS state (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    country_id INT NOT NULL,
+    name VARCHAR(50),
+    country_id INT,
     CONSTRAINT contry_id_FK FOREIGN KEY (country_id) REFERENCES country(id)
 );
 
 CREATE TABLE IF NOT EXISTS city (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    state_id INT NOT NULL,
+    name VARCHAR(50),
+    state_id INT,
     CONSTRAINT state_id_FK FOREIGN KEY (state_id) REFERENCES state(id)
 );
 
 CREATE TABLE IF NOT EXISTS location(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    address VARCHAR(250) NOT NULL,
-    city_id INT NOT NULL,
+    address VARCHAR(250),
+    city_id INT,
     CONSTRAINT city_id_FK FOREIGN KEY (city_id) REFERENCES city(id)
 );
 
 CREATE TABLE IF NOT EXISTS company(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) UNIQUE NOT NULL
+    name VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS headquarters(
@@ -66,17 +66,17 @@ CREATE TABLE IF NOT EXISTS state_area(
 
 CREATE TABLE IF NOT EXISTS area(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    capacity INT NOT NULL,
+    name VARCHAR(50),
+    capacity INT,
     state_id INT,
     CONSTRAINT id_state_area_FK FOREIGN KEY (state_id) REFERENCES state(id)
 );
 
 CREATE TABLE IF NOT EXISTS trainers(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    surname VARCHAR(50) NOT NULL,
-    identification VARCHAR(50) NOT NULL,
+    name VARCHAR(50),
+    surname VARCHAR(50),
+    identification VARCHAR(50),
     headquarters_id INT,
     CONSTRAINT id_headquarter_trainer_FK FOREIGN KEY (headquarters_id) REFERENCES headquarters(id)
 );
@@ -90,9 +90,9 @@ CREATE TABLE IF NOT EXISTS skill_trainer(
 );
 
 CREATE TABLE IF NOT EXISTS schedule_trainer(
-    trainer_id INT NOT NULL,
-    schedule_id INT NOT NULL,
-    area_id INT NOT NULL,
+    trainer_id INT,
+    schedule_id INT,
+    area_id INT,
     PRIMARY KEY (trainer_id, schedule_id, area_id),
     CONSTRAINT schedule_trainer_id_FK FOREIGN KEY (trainer_id) REFERENCES trainers(id),
     CONSTRAINT schedule_id_FK FOREIGN KEY (schedule_id) REFERENCES schedule(id),
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS schedule_trainer(
 
 CREATE TABLE IF NOT EXISTS learning_route(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    description VARCHAR(50) NOT NULL
+    description VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS data_base(
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS sgdb_route(
 
 CREATE TABLE IF NOT EXISTS state_skill(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    description VARCHAR(50) NOT NULL
+    description VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS skill(
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS session(
 
 CREATE TABLE IF NOT EXISTS state_assesment(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    description VARCHAR(50) NOT NULL
+    description VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS assesment_type(
@@ -174,9 +174,9 @@ CREATE TABLE IF NOT EXISTS assesment(
 
 CREATE TABLE IF NOT EXISTS tutor(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    surname VARCHAR(50) NOT NULL,
-    identification VARCHAR(50) NOT NULL,
+    name VARCHAR(50),
+    surname VARCHAR(50),
+    identification VARCHAR(50),
     phone_number VARCHAR(50)
 );
 
@@ -187,14 +187,14 @@ CREATE TABLE IF NOT EXISTS risk_level(
 
 CREATE TABLE IF NOT EXISTS state_camper(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    type_state VARCHAR(50) NOT NULL
+    type_state VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS camper(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    identification VARCHAR(50) UNIQUE NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    surname VARCHAR(50) NOT NULL,
+    identification VARCHAR(50) UNIQUE,
+    name VARCHAR(50),
+    surname VARCHAR(50),
     date_registration DATE,
     id_headquarters INT,
     id_state_camper INT,
