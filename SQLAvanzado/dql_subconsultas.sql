@@ -62,7 +62,14 @@ JOIN final_grade fg ON rs.id = fg.id_register_skill
 GROUP BY s.name
 ORDER BY Approval_Rate ASC;
 -- 7. Listar los campers que han aprobado todos los módulos de su ruta.
-
+SELECT c.name AS Camper_Name, c.surname AS Camper_Surname, lr.description AS Learning_Route
+FROM camper c
+JOIN learning_route lr ON c.id_learning_route = lr.id
+JOIN register_skill rs ON c.id = rs.id_camper
+JOIN final_grade fg ON rs.id = fg.id_register_skill
+JOIN skill_planned sp ON lr.id = sp.id_route
+GROUP BY c.id, c.name, c.surname, lr.description
+HAVING COUNT(DISTINCT CASE WHEN fg.final_grade >= 60 THEN sp.id END) = COUNT(DISTINCT sp.id);
 -- 8. Mostrar rutas con más de 10 campers en bajo rendimiento.
 SELECT lr.description AS Learning_Route, COUNT(c.id) AS Campers_Low_Performance
 FROM learning_route lr
@@ -112,6 +119,21 @@ GROUP BY t.name, t.surname
 HAVING COUNT(DISTINCT gc.route_id) > 3
 ORDER BY Routes_Trainer DESC;
 -- 13. Listar los horarios más ocupados por áreas.
+SELECT 
+    a.name AS Area_Name, 
+    s.start_time AS Schedule, 
+    COUNT(DISTINCT gd.id_camper) AS Currently_Occupied, 
+    a.capacity AS Area_Capacity,
+    ROUND((COUNT(DISTINCT gd.id_camper) / NULLIF(a.capacity, 0)) * 100, 2) AS Occupancy_Percentage
+FROM area a
+JOIN schedule_trainer st ON a.id = st.area_id
+JOIN trainers t ON st.trainer_id = t.id
+JOIN schedule s ON st.schedule_id = s.id
+JOIN group_campus gc ON t.id = gc.trainer_id
+LEFT JOIN group_details gd ON gc.id = gd.id_group
+GROUP BY a.id, a.name, s.start_time, a.capacity
+ORDER BY Currently_Occupied DESC, Occupancy_Percentage DESC;
+
 
 -- 14. Consultar las rutas con el mayor número de módulos.
 SELECT lr.description AS LEARNING_ROUTE, 
@@ -151,6 +173,18 @@ AND a2.id_assesment_type = 1
 AND g2.grade > g.grade;
 
 -- 17. Listar los módulos donde la media de quizzes supera el 9.
+SELECT 
+    s.name AS Module_Name, 
+    AVG(fg.final_grade) AS Average_Quiz_Grade
+FROM skill s
+JOIN skill_planned sp ON s.id = sp.id_skill
+JOIN register_skill rs ON sp.id = rs.id_skill_planned
+JOIN final_grade fg ON rs.id = fg.id_register_skill
+JOIN assesment a ON sp.id = a.id_skill_planned
+WHERE a.id_assesment_type = (SELECT id FROM assesment_type WHERE id = 3) 
+GROUP BY s.name
+HAVING Average_Quiz_Grade > 9
+ORDER BY Average_Quiz_Grade DESC;
 
 
 -- 18. Consultar la ruta con mayor tasa de graduación.
@@ -176,4 +210,19 @@ JOIN risk_level rl ON c.id_risk_level = rl.id
 WHERE rl.type_level = 'Medio' OR rl.type_level = 'Alto'
 GROUP BY s.id, s.name, rl.type_level
 ORDER BY Campers DESC;
+
 -- 20. Obtener la diferencia entre capacidad y ocupación en cada área.
+SELECT 
+    a.name AS Area, 
+    a.capacity AS Area_Capacity, 
+    COUNT(DISTINCT gd.id_camper) AS Current_Occupation, 
+    (a.capacity - COUNT(DISTINCT gd.id_camper)) AS Available_Spaces
+FROM area a
+LEFT JOIN schedule_trainer st ON a.id = st.area_id
+LEFT JOIN trainers t ON st.trainer_id = t.id 
+LEFT JOIN group_campus gc ON t.id = gc.trainer_id
+LEFT JOIN group_details gd ON gc.id = gd.id_group
+LEFT JOIN camper c ON gd.id_camper = c.id
+GROUP BY a.name, a.capacity
+ORDER BY Available_Spaces ASC; 
+
