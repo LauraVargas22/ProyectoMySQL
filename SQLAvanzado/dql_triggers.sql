@@ -431,7 +431,7 @@ AFTER UPDATE ON learning_route
 FOR EACH ROW
 BEGIN
     -- Registrar los cambios en la tabla de log para cada trainer afectado
-    INSERT INTO notification_log (message, target_id, target_type, id_trainer)
+    INSERT INTO notification_log (message, target_type, id_trainer)
     SELECT DISTINCT CONCAT('The learning route ', NEW.id, ' has been modified. Please check the changes.'),
            t.id,
            'trainer',
@@ -441,7 +441,6 @@ BEGIN
     WHERE gc.route_id = NEW.id;
 
 END //
-
 DELIMITER ;
 --Prueba
 UPDATE learning_route SET description = 'FRONTEND' WHERE id = 1;

@@ -6,6 +6,9 @@ sistema debe facilitar la gestión de inscripciones, rutas de aprendizaje, evalu
 asignaciones de entrenadores y áreas de entrenamiento, garantizando una solución robusta y
 optimizada.
 
+## Instalación:
+Para el correcto funcionamiento de la base de datos se recomienda seguir la siguiente tabla de contenido, en donde se creará la base de datos con sus respectivas tablas y atributos, con el fin de garantizar la correcta inserción de datos y el desarrolló de las consultas.
+
 ## Tabla de Contenidos:
 1. [Modelado Base de Datos](./Diagrama.jpg)
 2. [Creación Base de Datos](./ddl.sql)
@@ -25,7 +28,7 @@ optimizada.
 
 ## Modelo Base de Datos
 Teniendo en cuenta, la problemática planteada se desarrolló el siguiente modelo ER para la creación de la base de datos.
-![alt text](./Diagrama.png)
+![alt text](./ERDDiagram.jpg)
 
 La base de datos se compone de algunas entidades tales como:
 - **Company**: Hace referencia a la empresa o institución educativa en este caso Campuslands.

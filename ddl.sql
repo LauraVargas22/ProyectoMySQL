@@ -291,8 +291,7 @@ CREATE TABLE IF NOT EXISTS grades(
 
 CREATE TABLE IF NOT EXISTS notification_log (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    message VARCHAR(255),
-    target_id INT,
+    message VARCHAR(100),
     target_type VARCHAR(50),
     id_trainer INT,
     time_notification TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
