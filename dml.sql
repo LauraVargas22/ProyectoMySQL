@@ -124,7 +124,8 @@ INSERT INTO sgdb_route(id_route, id_Main_SGBD, id_Second_SGBD) VALUES
 
 
 INSERT INTO state_skill(description) VALUES
-('Inactivo'),('Activo'),('En Progreso'),('Finalizado'),('Suspendido'),('Cancelado'),('Pendiente de Evaluación'),('Aprobado'),('Rechazado'),('En Espera');
+('Inactivo'),('Activo'),('En Progreso'),('Finalizado'),('Suspendido'),('Cancelado'),('Pendiente de Evaluación'),('Aprobado'),('Rechazado'),('En Espera'), ('Reprobado');
+
 INSERT INTO skill(name) VALUES
 ('Java'),('C#'),('Python'),('JavaScript'),('PHP'),('HTML'),('CSS'),('SQL'),('C++'),('C'),('Ruby'),('Express'),('Go'),('NodeJS'),('Dart'),('Rust'),('Scala'),('Perl'),('R'),('MATLAB'),('Assembly'),('MYSQL'),('PostgreSQL'),('MongoDB'),('Kotlin'),('Swift'),('TypeScript'),('Vue.js'),('React.js'),('Angular.js'),('Scrum'),('GIT'),('Docker'),('Kubernetes'),('Jenkins'),('GraphQL'),('Firebase'),('TensorFlow'),('PyTorch'),('Hadoop'),('Apache Spark'),('Linux'),('Bash'),('PowerShell'),('Figma'),('Adobe XD'),('CI/CD'),('Agile'),('Trello'),('JIRA'),('Unit Testing');
 
@@ -214,7 +215,7 @@ INSERT INTO tutor(name, surname, identification, phone_number) VALUES
 
 INSERT INTO risk_level(type_level) VALUES ('Alto'), ('Medio'), ('Moderado'), ('Bajo'), ('Crítico'), ('Extremo'), ('Leve'), ('Severo'), ('Grave'), ('Inaceptable');
 
-INSERT INTO state_camper(type_state) VALUES ('En proceso de ingreso'), ('Inscrito'), ('Aprobado'), ('Cursando'), ('Graduado'), ('Expulsado'), ('Retirado'), ('Suspendido'), ('Reprobado'), ('En espera de evaluación'), ('Evaluado'), ('No evaluado'), ('En revisión'), ('Aceptado'), ('Rechazado'), ('En lista de espera'), ('En proceso de admisión'), ('En proceso de selección'), ('En proceso de matrícula'), ('En proceso de evaluación');
+INSERT INTO state_camper(type_state) VALUES ('En proceso de ingreso'), ('Inscrito'), ('Aprobado'), ('Cursando'), ('Graduado'), ('Expulsado'), ('Retirado'), ('Suspendido'), ('Reprobado'), ('En espera de evaluación'), ('Evaluado'), ('No evaluado'), ('En revisión'), ('Aceptado'), ('Rechazado'), ('En lista de espera'), ('En proceso de admisión'), ('En proceso de selección'), ('En proceso de matrícula'), ('En proceso de evaluación'), ('Bajo rendimiento');
 
 INSERT INTO camper(identification, name, surname, date_registration, id_headquarters, id_state_camper, id_risk_level, id_tutor, id_learning_route) VALUES
 ('1052340500', 'Laura', 'Vargas', '2023-01-15', 1, 4, 2, 1, 1),
